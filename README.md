@@ -74,4 +74,4 @@ Nest is [MIT licensed](LICENSE).
 
 ## TODO
 
-[x] Integrate google auth instead of intra42 auth
+[X] Integrate google auth instead of intra42 auth
