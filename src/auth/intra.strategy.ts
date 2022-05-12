@@ -1,0 +1,26 @@
+import { PassportStrategy } from "@nestjs/passport";
+import { Strategy } from "passport-42";
+import { UsersService } from "src/users/users.service";
+
+
+export default class IntraStrategy extends PassportStrategy(Strategy) {
+    constructor(private usersService: UsersService) {
+        super({
+            clientID: process.env.INTRA_CLIENT_ID,
+            clientSecret: process.env.INTRA_SECRET_ID,
+			callbackURL: "http://localhost:4000/auth",
+            scope: 'public'
+        });
+    }
+
+    async validate(
+        accessToken: string,
+        refreshToken: string,
+        profile: any
+        ) {
+        return {
+            token: accessToken,
+            ...profile
+        };
+    }
+}

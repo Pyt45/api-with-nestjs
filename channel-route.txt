@@ -1,0 +1,27 @@
+--- add admin ---
+post method
+/channels/:channelId/:userId
+
+--- find users banned from a channel ---
+get method
+/channels/banned/:channelId
+
+--- find users mutted from a channel ---
+get method
+/channels/mutted/:channelId
+
+--- find channels connected user belong to ---
+get method
+/user-channels/channels-belongto
+
+--- find channels connected user not belong to ---
+get method
+/user-channels/channels-notbelongto
+
+--- ban a user from a channel ---
+get method
+/user-channels/ban/:channelId/:userId
+
+--- mute a user from a channel ---
+get method
+/user-channels/mute/:channelId/:userId
